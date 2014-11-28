@@ -12,7 +12,7 @@ var app = {
     month: 0,
     day: 0,
     days: 0,
-    classes: {'century' : 3, 'decade' : 10, 'year' : 10, 'month' : 12, 'days' : 3, 'day': 10 },
+    classes: {'century' : 3, 'decade' : 10, 'year' : 10, 'month' : 12, 'day' : 4, 'days': 10 },
     generate: function () {
         
         var main = document.createElement("div"),
@@ -91,7 +91,7 @@ var app = {
         month.setAttribute("class", "qt month");
         var ul_month = document.createElement("ul");
         for (a = 11; a >= 0; a-=1) {
-            var li = document.createElement("li");
+            li = document.createElement("li");
             li.innerHTML = app.months[a]
             li.setAttribute("data-id", a);
             ul_month.appendChild(li);
@@ -107,7 +107,7 @@ var app = {
         var day = document.createElement("div");
         day.setAttribute("class", "qt day");
         var ul_day = document.createElement("ul");
-        for (a=3; a > 0; a-=1) {
+        for (a=3; a >= 0; a-=1) {
             var li = document.createElement("li");
             li.innerHTML = a;
             li.setAttribute("data-id", a);
@@ -234,15 +234,23 @@ var app = {
     },
     scale: function() {
         
-         var offsetHeight = document.getElementById('sdp').getElementsByClassName("wrapper").offsetHeight;
+         var offsetHeight = document.getElementById('sdp').getElementsByClassName("wrapper")[0].offsetHeight;
           
          for (var c in app.classes) {
-            var li = document.getElementById('sdp').getElementsByClassName(c)[0];
+            var li = document.getElementById('sdp').getElementsByClassName(c)[0].getElementsByTagName('li');
             var height = offsetHeight / app.classes[c];
-            li.style.height = height;
+             
+            var p = (height * 100) / offsetHeight;
+            app.setStyle(li, p);
          }
          
-       
+        
+    },
+    setStyle: function(elements, height) {
+        for (var i = 0; i < elements.length; i++) {
+     
+            elements[i].style.height = height + '%';
+        }
     }
  }
 
