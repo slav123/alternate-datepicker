@@ -1,8 +1,6 @@
 /*jslint node: true */
 "use strict";
 
-
-
 var app = {
     months: ['Jan', "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Nov", "Oct", "Dec"],
     preview: document.createElement("div"),

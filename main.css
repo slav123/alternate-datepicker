@@ -12,7 +12,7 @@ body {
     font-size: 12px;
   //  line-height: 1.5em;
     color: #545454;
-    background-color: #ffffff;
+//    background-color: #ffffff;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
   
 }
@@ -72,15 +72,15 @@ img {
     background: #c8c7cc;
     display: inline-block;
     position: relative;
-    top: 10px;
-    left: 10px;
+    top: 20px;
+    left: 20px;
     height: 568px;
     width: 320px;
     box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
-
+    outline: 1px solid #fff;
 }
 #sdp .wrapper {
-    height: 96%;
+    height: 94%;
 }
 #sdp .preview {
     height: 6%;
@@ -114,7 +114,7 @@ img {
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box; 
-    padding-top: 16px;
+    padding: 16px 0 0 0;
     cursor: pointer;
 }
 #sdp .qt li.active {
@@ -122,7 +122,6 @@ img {
     background: #efefef;
 }
 #sdp .qt li:hover {
-    color: red;
     background: rgba(255,255,255,0.5);
 }
 #sdp .century li {
@@ -156,3 +155,27 @@ img {
 #sdp .days li {
     font-size: 16px;
  }
+
+#desc {
+    position: absolute;
+    left: 50%;
+    background: rgba(255,255,255,0.6);
+    top: 20px;
+    padding: 10px 20px;
+    width: 280px;
+    margin-bottom: 20px
+}
+#desc p {
+    font-size: 14px;
+}
+
+@media (max-width: 720px) {
+    #desc {
+        position: relative;
+        left: 20px;
+            }
+}
+footer {
+    float: right;
+    margin-right: 20px;
+}
