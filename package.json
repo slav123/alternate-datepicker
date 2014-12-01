@@ -1,0 +1,12 @@
+{
+  "name": "aleternate-datepicker",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-compress": "^0.12.0",
+    "grunt-contrib-cssmin": "~0.6.0",
+    "grunt-contrib-uglify": "*",
+    "grunt-s3": "~0.2.0-alpha",
+    "grunt-text-replace": "^0.4.0"
+  }
+}

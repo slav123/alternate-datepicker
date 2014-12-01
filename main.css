@@ -1,44 +1,42 @@
 html {
     background-color: #e6e9e9;
-    background-image: -webkit-linear-gradient(270deg,rgb(230,233,233) 0%,rgb(216,221,221) 100%);
-    background-image: linear-gradient(270deg,rgb(230,233,233) 0%,rgb(216,221,221) 100%);
+    background-image: -webkit-linear-gradient(270deg, rgb(230, 233, 233) 0%, rgb(216, 221, 221) 100%);
+    background-image: linear-gradient(270deg, rgb(230, 233, 233) 0%, rgb(216, 221, 221) 100%);
     -webkit-font-smoothing: antialiased;
-    -webkit-text-size-adjust:none
+    -webkit-text-size-adjust: none
 }
-
 body {
     margin: 0 auto;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 12px;
-  //  line-height: 1.5em;
+    //  line-height: 1.5em;
     color: #545454;
-//    background-color: #ffffff;
+    //    background-color: #ffffff;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
-  
 }
-
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     color: #222;
     font-weight: 600;
     line-height: 1.3em;
 }
-
 h2 {
     margin-top: 1.3em;
 }
-
 a {
     color: #0083e8;
 }
-
-b, strong {
+b,
+strong {
     font-weight: 600;
 }
-
 samp {
     display: none;
 }
-
 img {
     -webkit-animation: colorize 2s cubic-bezier(0, 0, .78, .36) 1;
     animation: colorize 2s cubic-bezier(0, 0, .78, .36) 1;
@@ -49,7 +47,6 @@ img {
     margin: 1.3em auto;
     max-width: 95%;
 }
-
 @-webkit-keyframes colorize {
     0% {
         -webkit-filter: grayscale(100%);
@@ -58,7 +55,6 @@ img {
         -webkit-filter: grayscale(0%);
     }
 }
-
 @keyframes colorize {
     0% {
         filter: grayscale(100%);
@@ -67,15 +63,17 @@ img {
         filter: grayscale(0%);
     }
 }
-
+h1 {
+    margin: 5px 0;
+}
 #sdp {
     background: #c8c7cc;
     display: inline-block;
     position: relative;
-    top: 20px;
-    left: 20px;
+    top: 10px;
+    left: 10px;
     height: 568px;
-    width: 320px;
+    width: 300px;
     box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
     outline: 1px solid #fff;
 }
@@ -85,13 +83,14 @@ img {
 #sdp .preview {
     height: 6%;
     text-align: center;
-    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-    box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+    /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;
+    /* Firefox, other Gecko */
+    box-sizing: border-box;
     padding: 6px;
     font-size: 18px;
-    background: rgba(255,255,255,0.8);
-
+    background: rgba(255, 255, 255, 0.8);
 }
 #sdp .qt {
     width: 16.6%;
@@ -109,11 +108,13 @@ img {
     list-style: none;
     margin: 0;
     text-align: center;
-    background: rgba(255,255,255,0.9);
+    background: rgba(255, 255, 255, 0.9);
     outline: 1px solid #fff;
-    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-    box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+    /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;
+    /* Firefox, other Gecko */
+    box-sizing: border-box;
     padding: 16px 0 0 0;
     cursor: pointer;
 }
@@ -122,10 +123,10 @@ img {
     background: #efefef;
 }
 #sdp .qt li:hover {
-    background: rgba(255,255,255,0.5);
+    background: rgba(255, 255, 255, 0.5);
 }
 #sdp .century li {
-    width: 100%;  
+    width: 100%;
 }
 #sdp .century span {
     display: inline-block;
@@ -137,12 +138,10 @@ img {
     text-align: center;
     font-size: 22px;
 }
-
 #sdp .decade li {
     font-size: 16px
 }
 #sdp .year li {
- 
     font-size: 16px
 }
 #sdp .month li {
@@ -151,16 +150,15 @@ img {
 #sdp .day li {
     padding-top: 55px;
     font-size: 18px;
- }
+}
 #sdp .days li {
     font-size: 16px;
- }
-
+}
 #desc {
     position: absolute;
     left: 50%;
-    background: rgba(255,255,255,0.6);
-    top: 20px;
+    background: rgba(255, 255, 255, 0.6);
+    top: 10px;
     padding: 10px 20px;
     width: 280px;
     margin-bottom: 20px
@@ -169,13 +167,25 @@ img {
     font-size: 14px;
 }
 
-@media (max-width: 720px) {
-    #desc {
-        position: relative;
-        left: 20px;
-            }
-}
 footer {
     float: right;
     margin-right: 20px;
+    top: 100%;
+    left: 100%;
+    margin: -20px 0 0 -150px;
+    position: absolute;
+}
+@media (max-width: 720px) {
+    #desc {
+        position: relative;
+        left: 10px;
+        padding: 10px;
+    }
+    footer {
+        position: relative;
+        top:auto;
+        left: auto;
+        margin: auto;
+        margin-right: 10px;
+    }
 }

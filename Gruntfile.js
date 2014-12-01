@@ -18,6 +18,41 @@ module.exports = function(grunt) {
                 }
             }
         },
+        replace: {},
+        // use custom extension for the output file
+        compress: {
+            main: {
+                options: {
+                    mode: 'gzip',
+                    level: 9
+                },
+                files: [
+                    // Each of the files in the src/ folder will be output to
+                    // the dist/ folder each with the extension .gz.js
+                    {
+                        expand: true,
+                        cwd: 'build',
+                        src: ['main.js'],
+                        dest: 'build/',
+                        ext: '.js.gz'
+                    },
+                     {
+                        expand: true,
+                        cwd: 'build',
+                        src: ['main.css'],
+                        dest: 'build/',
+                        ext: '.css.gz'
+                    },
+                     {
+                        expand: true,
+                        
+                        src: ['index.html'],
+                        dest: 'build/',
+                        ext: '.html.gz'
+                    }
+                ]
+            }
+        },
         s3: {
             options: {
                 key: '<%= aws.AWSAccessKeyId %>',
@@ -36,20 +71,20 @@ module.exports = function(grunt) {
                 },
                 // Files to be uploaded.
                 upload: [{
-                        src: 'build/main.js',
+                        src: 'build/main.js.gz',
                         dest: 'dp/main.js',
                         gzip: true,
-                        headers: {
+                        options: {
                             'Content-Type': 'text/javascript',
                             'Content-Encoding': 'gzip',
                             'Cache-Control': 'max-age=3600, must-revalidate'
                         }
                         //                      headers: {'Content-type': 'text/javascript', 'Content-Encoding': 'gzip', 'Cache-Control': 'max-age=3600, must-revalidate'}
                     }, {
-                        src: 'build/main.css',
+                        src: 'build/main.css.gz',
                         dest: 'dp/main.css',
                         gzip: true,
-                        headers: {
+                        options: {
                             'Content-Type': 'text/css',
                             'Content-Encoding': 'gzip',
                             'Cache-Control': 'max-age=3600, must-revalidate'
@@ -57,10 +92,10 @@ module.exports = function(grunt) {
                     },
 
                     {
-                        src: 'index.html',
+                        src: 'build/index.html.gz',
                         dest: 'dp/index.html',
                         gzip: true,
-                        headers: {
+                        options: {
                             'Content-Type': 'text/html',
                             'Content-Encoding': 'gzip',
                             'Cache-Control': 'max-age=3600, must-revalidate'
@@ -74,8 +109,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-s3');
+    grunt.loadNpmTasks('grunt-contrib-compress');
 
     // Default task(s).
-    grunt.registerTask('default', ['uglify', 'cssmin', 's3']);
+    grunt.registerTask('default', ['uglify', 'cssmin', 'compress', 's3']);
 
 };
