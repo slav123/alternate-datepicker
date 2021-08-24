@@ -5,8 +5,7 @@ It’s a very simple prototype of alternative approach to date picker. The goal 
 
 Written in pure JavaScript – no dependencies.
 
-![Alternative Date Picker](
-https://www.spidersoft.com.au/uploads/2015/05/date-picker.jpg)
+![Alternative Date Picker](http://www.spidersoft.com.au/images/uploads/2015/05/date-picker.jpg)
 
 
 Check How it work: <http://www.spidersoft.com.au/projects/alternate-date-picker/>
